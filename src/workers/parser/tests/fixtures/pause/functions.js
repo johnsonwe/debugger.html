@@ -1,4 +1,4 @@
-
+// @flow
 function fn(one, { two } = {}) {
 
 }

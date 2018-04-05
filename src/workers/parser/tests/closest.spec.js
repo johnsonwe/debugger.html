@@ -1,4 +1,5 @@
 /* eslint max-nested-callbacks: ["error", 4]*/
+// @flow
 
 import { getClosestExpression } from "../utils/closest";
 import { getSource } from "./helpers";

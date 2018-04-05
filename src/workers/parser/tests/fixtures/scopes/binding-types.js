@@ -1,3 +1,4 @@
+// @flow
 import def from "";
 import { named } from "";
 import { thing as otherNamed } from "";

@@ -1,4 +1,5 @@
 /* eslint max-nested-callbacks: ["error", 4]*/
+// @flow
 
 import getScopes from "../getScopes";
 import { setSource } from "../sources";

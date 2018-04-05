@@ -1,3 +1,4 @@
+// @flow
 function math(n) {
   function square(n) {
     // inline comment

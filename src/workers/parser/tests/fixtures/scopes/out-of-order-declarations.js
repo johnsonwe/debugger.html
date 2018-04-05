@@ -1,3 +1,4 @@
+// @flow
 var val;
 
 export default function root() {

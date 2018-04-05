@@ -1,4 +1,5 @@
 // Program Scope
+// @flow
 
 function outer() {
   function inner() {

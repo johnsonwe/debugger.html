@@ -1,3 +1,4 @@
+// @flow
 export {};
 
 switch (foo) {

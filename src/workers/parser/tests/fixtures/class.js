@@ -1,3 +1,4 @@
+// @flow
 class Test {
   constructor() {
     this.foo = "foo";

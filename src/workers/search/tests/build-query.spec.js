@@ -1,3 +1,4 @@
+// @flow
 import { escapeRegExp } from "lodash";
 import buildQuery from "../build-query";
 

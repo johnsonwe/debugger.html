@@ -1,3 +1,4 @@
+// @flow
 const obj = { a: { b: 2 } }; // e.g. obj.a.b
 const foo = obj2.c.secondProperty; // e.g. foo.obj2.c.secondProperty
 

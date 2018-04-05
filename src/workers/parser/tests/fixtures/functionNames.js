@@ -1,4 +1,5 @@
 /* eslint-disable */
+// @flow
 
 ({
   foo: function() {},

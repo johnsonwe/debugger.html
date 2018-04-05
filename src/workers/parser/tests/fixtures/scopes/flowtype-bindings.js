@@ -1,3 +1,4 @@
+// @flow
 import type { One, Two, Three } from "./src/mod";
 
 type Other = {};

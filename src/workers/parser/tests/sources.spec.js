@@ -1,3 +1,4 @@
+// @flow
 import { hasSource, getSource, setSource, clearSources } from "../sources";
 
 import type { Source } from "../../../types";

@@ -1,3 +1,4 @@
+// @flow
 const { b, resty } = compute(stuff);
 const { first: f, last: l } = obj;
 

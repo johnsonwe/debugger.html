@@ -1,3 +1,4 @@
+// @flow
 const TIME = 60;
 let count = 0;
 

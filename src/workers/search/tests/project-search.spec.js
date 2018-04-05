@@ -1,3 +1,4 @@
+// @flow
 import { findSourceMatches } from "../project-search";
 
 const text = `
