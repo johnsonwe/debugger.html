@@ -4,6 +4,7 @@
 // @flow
 
 // Maybe reuse file search's functions?
+// @flow
 import React from "react";
 
 export function highlightMatches(lineMatch) {

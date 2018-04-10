@@ -5,8 +5,10 @@
 
 // @flow
 
-export type AstPosition = { line: number, column: number };
+// @flow
+import type { BabelLocation } from "@babel/types";
 
+export type AstPosition = { line: number, column: number };
 export type AstLocation = { end: AstPosition, start: AstPosition };
 
 export type Scope = {
@@ -46,4 +48,9 @@ export type SymbolDeclarations = {
   objectProperties: Array<SymbolDeclaration>,
   identifiers: Array<SymbolDeclaration>,
   comments: Array<SymbolDeclaration>
+};
+
+export type PausePoint = {
+  location: { line: number, column: number },
+  types: { breakpoint: boolean, stepOver: boolean }
 };
