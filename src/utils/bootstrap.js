@@ -3,7 +3,10 @@
  * file, You can obtain one at <http://mozilla.org/MPL/2.0/>. */
 // @flow
 <<<<<<< HEAD
+<<<<<<< HEAD
 
+=======
+>>>>>>> 759a17125b1ed059d2fb023af9fc82372a292afb
 =======
 >>>>>>> 759a17125b1ed059d2fb023af9fc82372a292afb
 import React from "react";

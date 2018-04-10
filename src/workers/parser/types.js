@@ -4,8 +4,11 @@
 */
 
 // @flow
+<<<<<<< HEAD
 
 // @flow
+=======
+>>>>>>> 759a17125b1ed059d2fb023af9fc82372a292afb
 import type { BabelLocation } from "@babel/types";
 
 export type AstPosition = { line: number, column: number };
