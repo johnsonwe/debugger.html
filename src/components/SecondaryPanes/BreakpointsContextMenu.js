@@ -1,8 +1,7 @@
 // @flow
 import { buildMenu, showMenu } from "devtools-contextmenu";
 
-export default function showContextMenu(props) {
-  export default function showContextMenu(props: Object)
+export default function showContextMenu(props: Object) {
   const {
     removeBreakpoint,
     removeBreakpoints,
