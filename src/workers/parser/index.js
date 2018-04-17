@@ -42,11 +42,11 @@ export type {
   BindingType
 } from "./getScopes";
 
+export type { AstLocation, AstPosition, PausePoints } from "./types";
+
 export type {
+  ClassDeclaration,
   SymbolDeclaration,
   SymbolDeclarations,
-  AstLocation,
-  AstPosition,
-  Scope
-} from "./types";
-export type { PausePoint, PausePoints } from "./pausePoints";
+  FunctionDeclaration
+} from "./getSymbols";

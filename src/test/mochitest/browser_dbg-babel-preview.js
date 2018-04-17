@@ -1,6 +1,9 @@
 /* Any copyright is dedicated to the Public Domain.
  * http://creativecommons.org/publicdomain/zero/1.0/ */
 
+// Tests for preview through Babel's compile output.
+requestLongerTimeout(3);
+
 function getCoordsFromPosition(cm, { line, ch }) {
   return cm.charCoords({ line: ~~line, ch: ~~ch });
 }
@@ -28,50 +31,12 @@ async function assertPreviews(dbg, previews) {
 }
 
 async function breakpointPreviews(dbg, fixture, { line, column }, previews) {
-  const { selectors: { getBreakpoint, getBreakpoints }, getState } = dbg;
-
   const filename = `fixtures/${fixture}/input.js`;
-  await waitForSources(dbg, filename);
-
-  ok(true, "Original sources exist");
-  const source = findSource(dbg, filename);
-
-  await selectSource(dbg, source);
-
-  // Test that breakpoint is not off by a line.
-  await addBreakpoint(dbg, source, line);
-
-  is(getBreakpoints(getState()).size, 1, "One breakpoint exists");
-  ok(
-    getBreakpoint(getState(), { sourceId: source.id, line, column }),
-    "Breakpoint has correct line"
-  );
-
   const fnName = fixture.replace(/-([a-z])/g, (s, c) => c.toUpperCase());
 
-  const invokeResult = invokeInTab(fnName);
-
-  let invokeFailed = await Promise.race([
-    waitForPaused(dbg),
-    invokeResult.then(() => new Promise(() => {}), () => true)
-  ]);
-
-  if (invokeFailed) {
-    return invokeResult;
-  }
-
-  assertPausedLocation(dbg);
-
-  await assertPreviews(dbg, previews);
-
-  await removeBreakpoint(dbg, source.id, line, column);
-
-  is(getBreakpoints(getState()).size, 0, "Breakpoint reverted");
-
-  await resume(dbg);
-
-  // If the invoke errored later somehow, capture here so the error is reported nicely.
-  await invokeResult;
+  await invokeWithBreakpoint(dbg, fnName, filename, { line, column }, async () => {
+    await assertPreviews(dbg, previews);
+  });
 
   ok(true, `Ran tests for ${fixture} at line ${line} column ${column}`);
 }
@@ -85,19 +50,19 @@ add_task(async function() {
     {
       line: 5,
       column: 7,
-      expression: "doThing;",
+      expression: "doThing",
       result: "doThing(arg)",
     },
     {
       line: 5,
       column: 12,
-      expression: "x;",
+      expression: "x",
       result: "1",
     },
     {
       line: 8,
       column: 16,
-      expression: "doThing;",
+      expression: "doThing",
       result: "doThing(arg)",
     },
   ]);
@@ -110,7 +75,7 @@ add_task(async function() {
     {
       line: 2,
       column: 9,
-      expression: "aVar;",
+      expression: "aVar",
       result: '"var3"',
     },
     {
@@ -128,7 +93,7 @@ add_task(async function() {
     {
       line: 10,
       column: 11,
-      expression: "aVar;",
+      expression: "aVar",
       result: '"var3"',
     },
     {
@@ -148,7 +113,7 @@ add_task(async function() {
     {
       line: 14,
       column: 13,
-      expression: "aVar;",
+      expression: "aVar",
       result: '"var3"',
     },
     {
@@ -193,7 +158,7 @@ add_task(async function() {
     {
       line: 26,
       column: 16,
-      expression: "aNamespace;",
+      expression: "aNamespace",
       fields: [
         ['aNamed', 'a-named'],
         ['default', 'a-default'],
@@ -226,7 +191,7 @@ add_task(async function() {
     {
       line: 35,
       column: 20,
-      expression: "aNamespace2;",
+      expression: "aNamespace2",
       fields: [
         ['aNamed', 'a-named2'],
         ['default', 'a-default2'],
