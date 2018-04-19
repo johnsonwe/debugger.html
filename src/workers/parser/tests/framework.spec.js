@@ -1,3 +1,4 @@
+// @flow
 import { getFramework } from "../frameworks";
 import { getSource, getOriginalSource } from "./helpers";
 import { setSource } from "../sources";

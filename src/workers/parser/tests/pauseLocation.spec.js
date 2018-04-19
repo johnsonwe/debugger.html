@@ -1,4 +1,5 @@
 /* eslint max-nested-callbacks: ["error", 4]*/
+// @flow
 
 import { isInvalidPauseLocation } from "../pauseLocation";
 import { setSource } from "../sources";

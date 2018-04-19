@@ -1,4 +1,5 @@
 /* eslint max-nested-callbacks: ["error", 4]*/
+// @flow
 
 import { getPausePoints } from "../pausePoints";
 import { setSource } from "../sources";

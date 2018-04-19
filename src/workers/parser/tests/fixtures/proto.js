@@ -1,3 +1,4 @@
+// @flow
 const foo = function() {};
 
 const bar = () => {};

@@ -1,3 +1,4 @@
+// @flow
 (function(key) {
   let obj = {
     b: 5

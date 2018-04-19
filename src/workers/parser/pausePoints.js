@@ -1,3 +1,4 @@
+// @flow
 import { traverseAst } from "./utils/ast";
 import * as t from "@babel/types";
 import type { AstLocation } from "./types";

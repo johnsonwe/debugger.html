@@ -1,3 +1,4 @@
+// @flow
 export {};
 
 var Outer = class Outer {

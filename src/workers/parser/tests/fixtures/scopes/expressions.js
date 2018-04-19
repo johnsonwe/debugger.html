@@ -1,3 +1,4 @@
+// @flow
 const foo = {};
 
 foo.bar().baz;

@@ -1,3 +1,4 @@
+// @flow
 import {x} from "y"
 
 const arr = [

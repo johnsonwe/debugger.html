@@ -1,3 +1,4 @@
+// @flow
 export {};
 
 let fn = function(p1) {};

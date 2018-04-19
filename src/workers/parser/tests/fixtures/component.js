@@ -1,6 +1,7 @@
 /*
  * class
  */
+// @flow
 
 class Punny extends Component {
   constructor(props) {

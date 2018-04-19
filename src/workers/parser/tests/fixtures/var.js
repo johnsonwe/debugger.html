@@ -1,3 +1,4 @@
+// @flow
 var foo = 1;
 let bar = 2;
 const baz = 3;

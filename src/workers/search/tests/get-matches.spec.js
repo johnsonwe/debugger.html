@@ -1,3 +1,4 @@
+// @flow
 import getMatches from "../get-matches";
 
 describe("search", () => {

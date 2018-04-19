@@ -1,3 +1,4 @@
+// @flow
 import mapOriginalExpression from "../mapOriginalExpression";
 
 describe("mapOriginalExpression", () => {

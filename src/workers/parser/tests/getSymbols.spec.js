@@ -1,4 +1,5 @@
 /* eslint max-nested-callbacks: ["error", 4]*/
+// @flow
 
 import { formatSymbols } from "../utils/formatSymbols";
 import { getSource, getOriginalSource } from "./helpers";
